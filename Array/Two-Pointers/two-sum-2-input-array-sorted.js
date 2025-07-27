@@ -8,7 +8,6 @@
  * You must use exactly one solution, and cannot use the same element twice.
  */
 
-// ============================
 // ✅ Best Approach (Two Pointers)
 // ============================
 // ✅ Most optimal for sorted arrays
