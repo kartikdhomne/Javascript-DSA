@@ -7,9 +7,7 @@
  *  - removing all non-alphanumeric characters
  */
 
-// ============================
 // ✅ 1. Best: Clean String + Two Pointer (Your Version)
-// ============================
 
 var isPalindrome = function (s) {
   let clean = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
