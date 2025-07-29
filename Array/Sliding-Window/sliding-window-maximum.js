@@ -97,9 +97,7 @@ console.log(maxSlidingWindow([4, -2], 2));            // [4]
  * | Monotonic Queue | O(n)     | O(k)   | Best for large-scale inputs   |
  */
 
-
-// =======================================
-// 🧑‍💻 FAANG Interview Tips
+// 🧑‍💻Interview Tips
 // =======================================
 /**
  * ✅ This problem tests knowledge of advanced sliding window + deque.
