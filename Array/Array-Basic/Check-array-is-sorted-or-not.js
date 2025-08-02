@@ -1,4 +1,5 @@
 // 🔴 Remove duplicate from sorted array
+
 // Example : const arr = [2,5,3,4,1,7,4,6]; "false"
 
 // 🔴 Method 1
