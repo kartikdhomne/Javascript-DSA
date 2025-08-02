@@ -1,4 +1,4 @@
-// 🔴🔴🔴 Remove duplicate from sorted array
+// 🔴 Remove duplicate from sorted array
 // Example : const arr = [2,5,3,4,1,7,4,6]; "false"
 
 // 🔴 Method 1
@@ -35,9 +35,11 @@ function CheckSorted(arr) {
   return true;
 }
 console.log(CheckSorted(arr));
+
 // Time Complexity
 // Runs a single loop, iterating through N elements.
 // Total Complexity: O(N) (Linear Time Complexity)
+
 // Space Complexity
 // Uses only a few variables → O(1) (Constant Space Complexity)
 // ✅ Best choice: Faster and more efficient (O(N)) compared to O(N²).
