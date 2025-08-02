@@ -1,3 +1,5 @@
+//Find maximum element in array
+
 const arr = [1, 2, 3, 41, 5, 6];
 
 function maxElement(arr) {
