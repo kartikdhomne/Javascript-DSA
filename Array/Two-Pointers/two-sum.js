@@ -13,8 +13,7 @@
 // ============================
 // 🟡 Note :- We can use two pointer here but only if input array is sorted
 // 🟡 Else we go with hashmap based approach.
-// 🟡 Using hashmap: You store each number’s index
-//     You check if the complement (target - nums[i]) has already been seen
+// 🟡 Using hashmap: You store each number’s index You check if the complement (target - nums[i]) has already been seen
 
 function twoSumHashMap(nums, target) {
   const map = new Map();

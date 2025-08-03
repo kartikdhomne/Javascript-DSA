@@ -6,6 +6,7 @@ const arr = [2, 4, 5, 3, 7, 4, 1, 2];
 // function RemoveDuplicate(arr) {
 //   return [...new Set(arr)];
 // }
+
 // console.log(RemoveDuplicate(arr), "res");
 
 // new Set(arr) → O(N) (Converting array to a Set)
