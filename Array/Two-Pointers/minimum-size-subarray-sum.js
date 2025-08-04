@@ -13,6 +13,7 @@
 // ======================================
 // ❌ 1. Brute Force — O(n^2)
 // ======================================
+
 var minSubArrayLenBrute = function (target, nums) {
     let minLength = Infinity;
 
@@ -33,6 +34,7 @@ var minSubArrayLenBrute = function (target, nums) {
 // ======================================
 // ✅ 2. Sliding Window (Two Pointers) — O(n)
 // ======================================
+
 var minSubArrayLen = function (target, nums) {
     let left = 0;
     let sum = 0;
@@ -55,6 +57,7 @@ var minSubArrayLen = function (target, nums) {
 // ======================================
 // ✅ 3. Prefix Sum + Binary Search — O(n log n)
 // ======================================
+
 var minSubArrayLenBinary = function (target, nums) {
     const prefix = [0];
     for (let i = 0; i < nums.length; i++) {
