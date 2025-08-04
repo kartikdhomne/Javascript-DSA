@@ -23,6 +23,7 @@
 // ============================
 // ✅ Optimal Approach: Sort + Two Pointers
 // ============================
+
 function threeSum(nums) {
   const result = [];
   nums.sort((a, b) => a - b); // Step 1: Sort the array
@@ -61,6 +62,7 @@ function threeSum(nums) {
 // ============================
 // ❌ Brute Force Approach (TLE for big inputs)
 // ============================
+
 function threeSumBrute(nums) {
   const n = nums.length;
   const set = new Set();
