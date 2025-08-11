@@ -1,53 +1,112 @@
-//🔴 Find the largest element in an array
-// Example const arr = [1,2,3,4]    output = 4
-const arr = [1, 2, 3, 4];
-// 🟢 Approach first using sort
-function largest(arr) {
-  let newVal = arr.sort((a, b) => a - b);
-  return newVal[newVal.length - 1];
+/**
+ * 🟩 Problem: Find Second Smallest & Second Largest Element in Array
+ *
+ * Given an array of numbers, find:
+ * - The second smallest element
+ * - The second largest element
+ *
+ * Example:
+ * arr = [1, 2, 3, 4, 5]
+ * Output: second smallest = 2, second largest = 4
+ */
+
+// -------------------------------
+// 🟥 1. Sort Method
+// -------------------------------
+
+function secondSmallestLargestSort(arr) {
+  const sorted = [...arr].sort((a, b) => a - b);
+  const secondSmallest = sorted[1];
+  const secondLargest = sorted[sorted.length - 2];
+  return { secondSmallest, secondLargest };
 }
-console.log(largest(arr));
-// ❌ Time Complexity: O(N log N) – Sorting is costly
-// ❌ Space Complexity: O(1) (if sorting is in-place) or O(N)
-// (if sorting creates a new array)
 
-//🔹Why is it worse?
-// Sorting takes extra time when we only need the max value.
-// Modifies the original array, which may not be allowed in some cases.
+// -------------------------------
+// 🟦 2. One-Pass Method (No Sort)
+// -------------------------------
 
-// 🟢 Approach second using max as first index
-function largest(arr) {
-  let max = arr[0]; //assuming first element is max
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
+function secondSmallestLargestOnePass(arr) {
+  let smallest = Infinity, secondSmallest = Infinity;
+  let largest = -Infinity, secondLargest = -Infinity;
+
+  for (let num of arr) {
+    // Smallest
+    if (num < smallest) {
+      secondSmallest = smallest;
+      smallest = num;
+    } else if (num < secondSmallest && num !== smallest) {
+      secondSmallest = num;
+    }
+
+    // Largest
+    if (num > largest) {
+      secondLargest = largest;
+      largest = num;
+    } else if (num > secondLargest && num !== largest) {
+      secondLargest = num;
     }
   }
-  return max;
+
+  return { secondSmallest, secondLargest };
 }
-console.log(largest(arr)); // 4
-// Time Complexity: O(N) (Linear) – Traverses the array once
-// Space Complexity: O(1) – No extra space used
 
-//🔹Why is it better?
-// It does not modify the original array.
-// Works efficiently for large datasets.
-// It is the most commonly expected approach in interviews.
+// -------------------------------
+// 🟢 3. Set + Sort Method (Remove Duplicates)
+// -------------------------------
 
-// B] Using Optimal Solution method
-const largestEle = function (arr) {
-  if (arr.length === 0) {
-    return -1;
-  }
+function secondSmallestLargestSet(arr) {
+  const uniqueSorted = [...new Set(arr)].sort((a, b) => a - b);
+  const secondSmallest = uniqueSorted[1];
+  const secondLargest = uniqueSorted[uniqueSorted.length - 2];
+  return { secondSmallest, secondLargest };
+}
 
-  let largest = arr[0];
+// -------------------------------
+// 🔍 Example Walkthrough
+// -------------------------------
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > largest) {
-      largest = arr[i];
-    }
-  }
-  return largest;
-};
+const arrExample = [3, 6, 2, 1, 5, 4];
+console.log("Sort Method:", secondSmallestLargestSort(arrExample)); // { secondSmallest: 2, secondLargest: 5 }
+console.log("One Pass:", secondSmallestLargestOnePass(arrExample)); // { secondSmallest: 2, secondLargest: 5 }
+console.log("Set + Sort:", secondSmallestLargestSet(arrExample));   // { secondSmallest: 2, secondLargest: 5 }
 
-console.log(largestEle([0, 2, 3, 65, 257, 1343]));
+// -------------------------------
+// 📌 Interview-Ready Summary
+// -------------------------------
+
+/**
+ * ✅ When to use which approach:
+ *
+ * Sort Method:
+ * - Time: O(n log n)
+ * - Space: O(n) (due to copy & sort)
+ * - Simple and easy to write
+ *
+ * One-Pass Method:
+ * - Time: O(n)
+ * - Space: O(1)
+ * - Best for interviews
+ * - Efficient, avoids sorting
+ *
+ * Set + Sort:
+ * - Time: O(n log n) (sorting after deduplication)
+ * - Space: O(n)
+ * - Useful if duplicates must be ignored
+ *
+ * ✅ Interview Answer:
+ * "I would use the one-pass approach in interviews since it runs in O(n) time and O(1) space.
+ *  It works by tracking the smallest and largest values while iterating once through the array,
+ *  updating second smallest/largest whenever we find a new smallest/largest."
+ */
+
+// -------------------------------
+// ✅ Complexity Table
+// -------------------------------
+
+/**
+ * | Method         | Time Complexity | Space Complexity | Interview Use |
+ * |----------------|-----------------|------------------|---------------|
+ * | Sort           | O(n log n)      | O(n)             | ❌ Simple but slower |
+ * | One Pass       | O(n)            | O(1)             | ✅ Recommended |
+ * | Set + Sort     | O(n log n)      | O(n)             | ❌ Use if duplicates matter |
+ */
