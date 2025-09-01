@@ -4,9 +4,6 @@
  * 🎯 Problem:
  * Given a sorted array `nums`, remove duplicates in-place such that each element appears only once.
  * Return the new length `k` such that the first `k` elements in `nums` are unique.
- *
- * ⚠️ DO NOT allocate extra space for another array. Modify in-place.
- */
 
 // ============================
 // ✅ Best Approach: Two Pointers (Slow & Fast)
@@ -14,6 +11,7 @@
 // 🟢 Efficiently modifies array in-place
 // 🟢 Uses `slow` to track position of unique elements
 // 🟢 `fast` moves ahead to find next unique
+
 function removeDuplicatesTwoPointer(nums) {
   if (nums.length === 0) return 0;
 
