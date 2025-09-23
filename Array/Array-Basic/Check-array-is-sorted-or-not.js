@@ -2,7 +2,7 @@
 
 // Example : const arr = [2,5,3,4,1,7,4,6]; "false"
 
-// 🔴 Method 1
+// Method 1
 // const arr = [2, 5, 3, 4, 1, 7, 4, 6];
 const arr = [1, 2, 3, 4, 5];
 function CheckSorted(arr) {
@@ -24,8 +24,8 @@ console.log(CheckSorted(arr));
 // Uses only a few variables → O(1) (Constant Space Complexity)
 // ❌ Very inefficient for large arrays due to nested loops.
 
-// 🔴 Method 2
 
+//Method 2
 function CheckSorted(arr) {
   if (arr.length === 0) return true;
   for (let i = 1; i < arr.length; i++) {
