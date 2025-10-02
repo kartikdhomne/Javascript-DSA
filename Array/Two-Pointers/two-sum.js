@@ -4,9 +4,7 @@
  * 🎯 Problem:
  * Given an array of integers and a target value,
  * return indices of the two numbers such that they add up to the target.
- *
- * You may assume that each input would have exactly one solution,
- * and you may not use the same element twice.
+ * You may assume that each input would have exactly one solution, and you may not use the same element twice.
  */
 
 // 🟢 Best Approach (HashMap)
