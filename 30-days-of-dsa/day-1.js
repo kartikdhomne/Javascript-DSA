@@ -25,22 +25,13 @@ console.log(removeDuplicateM2(arr1))
 // ************** Remove Duplicate From Object***************************
 
 let users = [
-    {
-        name: "kartik",
-        age: 27
-    },
-    {
-        name: "Pranjali",
-        age: 28
-    },
-    {
-        name: "kartik",
-        age: 28
-    }
-]
+    { name: "kartik", age: 27 },
+    { name: "Pranjali", age: 28 },
+    { name: "kartik", age: 28 }
+];
 
 const removeObjDuplicate = (users, key) => {
-    return [...new Map(users.map((item, index) => [key[item], item])).values()]
-}
+    return [...new Map(users.map(item => [item[key], item])).values()];
+};
 
-console.log(removeObjDuplicate)
+console.log(removeObjDuplicate(users, "name"));
